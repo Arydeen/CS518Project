@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<style>
+    table, th, td {
+    border: 1px solid black;
+    }
+
+    th, td {
+    padding: 10px;
+    }
+    </style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records</title>
+</head>
+<body>
+    <h1>Records</h1>
+    <P><a href="{{ url_for('index') }}">Index</a> > Read Records</P>
+    <ul>
+        <table>
+            <tr>
+                <th>datetime</th>
+                <th>title</th>
+                <th>message</th>
+            </tr>
+            {% for record in records %}
+                <tr>
+                    <td>{{ record["datetime"] }}</td>
+                    <td>{{ record["title"] }}</td>
+                    <td>{{ record["message"] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </ul>
+</body>
+</html>
