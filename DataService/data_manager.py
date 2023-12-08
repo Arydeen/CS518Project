@@ -130,7 +130,7 @@ def update(query, new_values):
     #########################
     # INSERT YOU CODE BELOW #
     #########################
-    mycol.update_many(query, {'$set': new_values})
+    mycol.update_one(query, {'$set': new_values})
 
 
 """
