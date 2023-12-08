@@ -1,24 +1,70 @@
-<!DOCTYPE html>
-<style>
-    table, th, td {
-    border: 1px solid black;
-    }
-
-    th, td {
-    padding: 10px;
-    }
-    </style>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>RainCheck</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-    <h1>Welcome!</h1>
-    <ul>
-        <li><P><a href="{{ url_for('records') }}">View Records</a></P></li>
-        <li><P><a href="{{ url_for('create') }}">Create Record</a></P></li>
-    </ul>
+    <h1>Welcome To RainCheck!</h1>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="">
+    <table>
+        <tr><th><P><a href="{{ url_for('records') }}">View Condition Reports</a></P></th></tr>
+        <tr><th><P><a href="{{ url_for('create') }}">Create a Condition Report</a></P></th></tr>
+        <tr><th><P><a href="{{ url_for('delete') }}">Delete a Condition Report</a></P></th></tr>
+        <tr><th><P><a href="{{ url_for('weathercams') }}">See The Live Conditions</a></P></th></tr>
+    </table>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Home</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">RainCheck</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('weathercams') }}">Live Cams</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">View and Create Reports</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ url_for('records') }}">View Condition Reports</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('create') }}">Create a Condition Report</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="{{ url_for('delete') }}">Delete a Condition Report</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container">
+            <div class="text-center mt-5">
+                <h1>Not Sure of The Conditions?</h1>
+                <p class="lead">See what people are saying about the live conditions for many outdoor sports</p>
+                <p>RainCheck v2.0.0</p>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
